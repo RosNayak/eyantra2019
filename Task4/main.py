@@ -212,14 +212,11 @@ while(True):
 	elif node%10 in node_number:
 		sequence.append(node%10)
 	node += 1
-
-
-with open('result.csv', 'w', newline='') as file:
-	writer = csv.writer(file)
-	writer.writerow([node_number[0], 'Medical Aid'])
-	writer.writerow([node_number[1], 'Food Supply'])
-	writer.writerow([node_number[2], 'Food Supply'])
 	
+#CODE THAT GETTS THE LIVE FEEDBACK ABOUT THE BOT AND SENDS THE NECESSARY SIGNALS TO THE BOT.
+# m SIGNAL INDICATES MOVE.
+# s SIGNAL INDICATES STOP AS THE CITY IS IN NEED OF AN AID OR SUPPLY.
+# c SIGNAL INDICATES THE CAPITAL HAS ARRIVED AND ITS TIME TO END THE RUN.
 PORT = "COM1"
 BAUD_RATE = 9600
 ser = serial.Serial(PORT, BAUD_RATE)
